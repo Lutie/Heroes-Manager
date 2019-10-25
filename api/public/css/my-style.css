@@ -1,0 +1,6 @@
+.vertical-bar {
+    height: 1px;
+    width: 100%;
+    background-color: #000000;
+    opacity: .33;
+}

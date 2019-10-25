@@ -1,0 +1,12 @@
+.window {
+    width: 33vw;
+    height: 33vh;
+    min-height: 200px;
+    min-width: 200px;
+    border: 1px solid black;
+}
+
+.main-frame {
+    display: flex;
+    flex-direction: row;
+}
