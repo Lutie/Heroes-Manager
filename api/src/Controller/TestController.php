@@ -7,7 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * @Route("/test")
+ * @Route("/api")
  */
 class TestController extends AbstractController
 {

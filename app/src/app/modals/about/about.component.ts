@@ -3,29 +3,29 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { getTestBed } from '@angular/core/testing';
 
+import { environment } from '../../../environments/environment';
+
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-  test: any;
+  version?: JSON;
+  apiUrl = environment.api.baseUrl;
 
-  constructor(private http: HttpClient) {
-    this.test = 'nada';
-  }
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.getTest().subscribe(
-      (response: any) => {
-        this.test = response;
-        console.log(this.test);
+    this.getVersion().subscribe(
+      (response: JSON) => {
+        this.version = response;
       }
     );
   }
 
-  getTest(): Observable<any> {
-    return this.http.get('https://heroes-manager-server.test/test/version');
+  getVersion(): Observable<any> {
+    return this.http.get(this.apiUrl + '/version');
   }
 
 }

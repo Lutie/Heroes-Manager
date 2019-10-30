@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Heroes Manager - Backoffice{% endblock %}</title>
+        {% block stylesheets %}
+
+            {# Bootstrap v4.0.0 #}
+            <link rel="stylesheet"
+                  href="{{ asset('css/bootstrap.min.css') }}"/>
+
+            {# Backoffice #}
+            <link rel="stylesheet" type="text/css"
+                  href="{{ asset('css/my-style.css') }}">
+
+        {% endblock %}
+    </head>
+    <body>
+
+    {% include('_menu.html.twig') %}
+    {% include('_flash.html.twig') %}
+
+        <div class="container">
+
+            {% block body %}{% endblock %}
+
+        </div>
+
+        {% block javascripts %}
+
+            {# Bootstrap JS #}
+            <script language="JavaScript" type="text/javascript"
+                    src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+            {# Backoffice #}
+            <script language="JavaScript" type="text/javascript"
+                    src="{{ asset('js/app.js') }}"></script>
+
+        {% endblock %}
+    </body>
+</html>
